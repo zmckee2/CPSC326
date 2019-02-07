@@ -1,0 +1,5 @@
+up 1;
+down 4;
+left 20;
+right -10;
+up 3;

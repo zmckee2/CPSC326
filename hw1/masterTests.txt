@@ -1,0 +1,31 @@
+Zach McKee
+hw1 test cases
+All test cases are start with their file name and are seperated
+with two new lines.
+
+test1.txt
+up 1;
+down 4;
+left 20;
+right -10;
+up 3;
+
+
+test2.txt
+right 2   ;
+  left 6; 
+  up 
+  12; down 4; right -5; right -0; left 0;
+
+
+test3.txt
+up 1
+down 20;
+left 3;
+hieisd 3;
+
+
+test4.txt
+up 12; down 35;
+right 5076;
+lereys 20;

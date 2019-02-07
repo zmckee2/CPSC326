@@ -1,0 +1,11 @@
+
+up 4;  down 1;
+
+right 5;right 4;left 1;
+
+   down -3;
+
+up 0; down 0; right 0; left 0;
+
+
+

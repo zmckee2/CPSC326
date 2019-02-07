@@ -1,0 +1,2 @@
+#This test checks to see if the parser ends after finding the first error
+if u = 20 then missingEndAndSemicolonHere

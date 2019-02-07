@@ -1,0 +1,6 @@
+
+left 7;
+
+down 24;
+
+ghtir 5;

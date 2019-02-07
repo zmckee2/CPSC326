@@ -1,0 +1,7 @@
+#This test checks to see if the parser makes sure struct works properly
+struct x
+    var y: int = 0;
+    fun u()
+        if m = 20 then print("m is 20"); end
+    end
+end

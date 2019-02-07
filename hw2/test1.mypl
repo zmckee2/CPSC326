@@ -1,0 +1,7 @@
+#Testing if comments are invisiable and all whitespace is ignored
+x = 4; #comment
+k = 3 and y = 20.5#45
+#Comment
+
+he if #Comment
+#Comment

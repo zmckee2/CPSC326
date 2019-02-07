@@ -1,0 +1,2 @@
+#This test case checks to see if the parser catches if statements without end
+if y == 0 then print("hello");

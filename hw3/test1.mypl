@@ -1,0 +1,11 @@
+#This test makes sure the parser works for a syntatically corrent file
+struct test
+    var y: float = 56.0;
+    var test : string = "testing";
+end
+
+fun float function(x: int)
+    if x == 0 then
+        otherFunction(x);
+    end
+end
