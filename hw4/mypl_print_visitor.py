@@ -1,3 +1,5 @@
+#Author Zach McKee
+#Couse: CPSC 326, Spring 2019
 import mypl_token as token
 import mypl_ast as ast
 class PrintVisitor(ast.Visitor):
@@ -73,7 +75,7 @@ class PrintVisitor(ast.Visitor):
         self.indent += 4
         fun_decl_stmt.stmt_list.accept(self)
         self.indent -= 4
-        self.__write('end\n')
+        self.__write('end\n\n')
 
     def visit_fun_param(self, fun_param):
         self.__write(fun_param.param_name.lexeme + ': ')
@@ -107,6 +109,7 @@ class PrintVisitor(ast.Visitor):
         if_stmt.if_part.stmt_list.accept(self)
         self.indent -= 4
         for basicIf in if_stmt.elseifs:
+            self.__write(self.__indent())
             self.__write('elif ')
             basicIf.bool_expr.accept(self)
             self.__write(' then\n')

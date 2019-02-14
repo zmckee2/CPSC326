@@ -1,0 +1,18 @@
+#This test case checks to see if the ast builds and prints 
+#correctly for many nested ifs
+
+if true then
+    if true then
+if false then
+            print("cool");
+    elif x or y and z and not v then
+            print("woah!");
+                    end
+    else
+while x + y > 200 do
+            set x = x - 20;
+        end
+    end
+else
+    print("wooho");
+end

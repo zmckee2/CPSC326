@@ -1,0 +1,29 @@
+#This test makes sure the AST is correct for a syntatically correct file
+struct test
+    var y: float 
+    = 56.0;
+    var test : string = "testing";
+end
+
+fun float function(x: int)
+    if 
+    x == 0 
+    then
+        otherFunction(x);
+else
+if x == 200 then
+print("Cool");
+elif true then
+otherFunction(2000);
+else
+print("done");
+end
+    
+    end
+end
+
+fun nil otherFunction(x:int)
+while x < 50 or x > 100 + 20 do
+set x = x + 1;
+end
+end

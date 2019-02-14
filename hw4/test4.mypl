@@ -1,0 +1,5 @@
+#This test makes sure the error detection still works
+#Missing semicolon on row 4
+while zebras > donkeys do
+    print("Thats a lot of zebras")
+end

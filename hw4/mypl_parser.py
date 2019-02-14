@@ -4,8 +4,6 @@ import mypl_error as error
 import mypl_lexer as lexer
 import mypl_token as token
 import mypl_ast as ast
-import mypl_print_visitor as printer
-import sys
 
 class Parser(object):
 
@@ -243,12 +241,6 @@ class Parser(object):
         while_stmt_node = ast.WhileStmt()
         self.__eat(token.WHILE, 'expecting a "while" keyword')
         while_stmt_node.bool_expr = self.__bexpr()
-        printMan2 = printer.PrintVisitor(sys.stdout)
-        '''
-        print("begin actuall while\n")
-        while_stmt_node.bool_expr.accept(printMan2)
-        print("\nend actuall while")
-        '''
         self.__eat(token.DO, 'expecting a "do" keyword')
         stmt_list_node = ast.StmtList()
         self.__bstmts(stmt_list_node)

@@ -1,0 +1,85 @@
+﻿PS D:\CPSC326\hw4> python hw4.py test1.mypl
+
+struct test
+    var y: float = 56.0;
+    var test: string = "testing";
+end
+
+
+fun float function(x: int)
+    if (x == 0) then
+        otherFunction(x);
+    else
+        if (x == 200) then
+            print("Cool");
+        elif true then
+            otherFunction(2000);
+        else
+            print("done");
+        end
+    end
+end
+
+
+fun otherFunction(x: int)
+    while ((x < 50) or (x > (100 + 20))) do
+        set x = (x + 1);
+    end
+end
+PS D:\CPSC326\hw4> python hw4.py test2.mypl
+if true then
+    if true then
+        if false then
+            print("cool");
+        elif (x or (y and (z and not v))) then
+            print("woah!");
+        end
+    else
+        while ((x + y) > 200) do
+            set x = (x - 20);
+        end
+    end
+else
+    print("wooho");
+end
+PS D:\CPSC326\hw4> python hw4.py test3.mypl
+while (x < 50) do
+    set x = 20;
+end
+while false do
+    uselessFunction(x, y, z, buffalo);
+end
+while (true and false) do
+    print("That makes no sense");
+end
+if (x.y.m < m.y.x) then
+    print("neat");
+else
+    print("not neat");
+end
+if (((x and y) and not z) or ((z and x) and not y)) then
+    print("long bool");
+end
+
+fun uselessFunction(x: string, y: float, z: int, buffalo: bool)
+    if buffalo then
+        print("There are ");
+        print(x);
+        print("buffalos\n");
+    elif not buffalo then
+        print("There are ");
+        print(y);
+        print("buffalos\n");
+    else
+        print(z);
+    end
+end
+PS D:\CPSC326\hw4> python hw4.py test4.mypl
+error: expecting a ";", found "end" in parser at line 5 column 1
+PS D:\CPSC326\hw4> python hw4.py test5.mypl
+error: expecting end, found "fun" in parser at line 3 column 5
+PS D:\CPSC326\hw4> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20190213153021
+**********************

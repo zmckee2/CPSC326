@@ -1,0 +1,5 @@
+#This test makes sure nested functions do not work
+fun nil x()
+    fun int y()
+    end
+end

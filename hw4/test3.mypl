@@ -1,0 +1,21 @@
+#This test runs the parser through a bunch of well-formed statements
+#without whitespace formatting
+while x < 50 do set x = 20; end
+while false do uselessFunction(x, y, z, buffalo); end
+while true and false do print("That makes no sense"); end
+if x.y.m < m.y.x then print("neat");
+else print("not neat"); end
+if ((x and y) and not z) or (z and x) and not y then print("long bool"); end
+fun nil uselessFunction(x: string, y: float, z: int, buffalo: bool)
+if buffalo then
+print("There are ");
+print(x);
+print("buffalos\n");
+elif not buffalo then
+print("There are ");
+print(y);
+print("buffalos\n");
+else
+print(z);
+end
+end
