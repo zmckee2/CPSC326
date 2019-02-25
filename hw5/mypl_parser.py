@@ -101,6 +101,7 @@ class Parser(object):
         fun_decl_node = ast.FunDeclStmt()
         self.__eat(token.FUN, "expecting fun keyword")
         if self.current_token.tokentype == token.NIL:
+            fun_decl_node.return_type = self.current_token
             self.__advance()
         else:
             fun_decl_node.return_type = self.__type()
@@ -342,14 +343,12 @@ class Parser(object):
         bool_expr_node = ast.BoolExpr()
         if self.current_token.tokentype == token.LPAREN:
             self.__advance()
-            temp_expr_node = self.__bexpr()
-            bool_expr_node = temp_expr_node.first_expr
+            bool_expr_node.first_expr = self.__bexpr()
             self.__eat(token.RPAREN, 'expecting a ")"')
             self.__bconnct(bool_expr_node)
         elif self.current_token.tokentype == token.NOT:
             self.__advance()
-            temp_expr_node = self.__bexpr()
-            bool_expr_node = temp_expr_node.first_expr
+            bool_expr_node.first_expr = self.__bexpr()
             bool_expr_node.negated = True
             self.__bexprt(bool_expr_node)
         else:

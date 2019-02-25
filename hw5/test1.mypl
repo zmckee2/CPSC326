@@ -1,0 +1,4 @@
+var x: int = 2;
+var x: float = nil;
+set x = 2.0;
+set x = 1.0 + 3;
