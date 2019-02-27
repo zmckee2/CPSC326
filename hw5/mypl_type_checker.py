@@ -1,3 +1,5 @@
+#Author: Zach McKee
+#Course: CPSC 326, Spring 2019
 import mypl_token as token
 import mypl_ast as ast
 import mypl_error as error
@@ -114,7 +116,11 @@ class TypeChecker(ast.Visitor):
             struct_types = self.sym_table.get_info(self.sym_table.get_info(type_token.lexeme))
             for i in range(1, len(lvalue.path)):
                 cur_token = lvalue.path[i].lexeme
-                type_token = struct_types[cur_token]
+                if cur_token in struct_types:
+                    type_token = struct_types[cur_token]
+                else:
+                    msg = 'Undefined variable "%s" in struct "%s"' %(cur_token,self.sym_table.get_info(lvalue.path[0].lexeme))
+                    self.__error(msg, lvalue.path[0])
                 non_structs = [token.STRINGTYPE, token.BOOLTYPE, token.FLOATTYPE, token.INTTYPE]
                 if(type_token not in non_structs):
                     struct_types = self.sym_table.get_info(type_token)
@@ -156,14 +162,20 @@ class TypeChecker(ast.Visitor):
         self.sym_table.set_info(fun_decl_stmt.fun_name.lexeme, params_and_return)
         fun_decl_stmt.stmt_list.accept(self)
         #Make sure the return type was correct if there was one
+        if return_type != token.NIL and self.current_type != 'return_declared':
+            msg = 'Missing return statement in function "%s"' % fun_decl_stmt.fun_name.lexeme
+            self.__error(msg, fun_decl_stmt.fun_name)
         self.sym_table.pop_environment()
 
     def visit_fun_param(self, fun_param):
         self.current_type = self.__convert_val_to_type(fun_param.param_type.lexeme)
 
     def visit_return_stmt(self, return_stmt):
-        return_stmt.return_expr.accept(self)
-        return_type = self.current_type
+        if(return_stmt.return_expr != None):
+            return_stmt.return_expr.accept(self)
+            return_type = self.current_type
+        else:
+            return_type = token.NIL
         isZeroExpr = False
         if isinstance(return_stmt.return_expr, ast.SimpleExpr):
             if isinstance(return_stmt.return_expr.term, ast.SimpleRValue):
@@ -173,6 +185,7 @@ class TypeChecker(ast.Visitor):
         if (fun_return_type != return_type and not isZeroExpr and return_type != token.NIL):
             msg = 'Incorrect return type'
             self.__error(msg, return_stmt.return_token)
+        self.current_type = 'return_declared'
 
     def visit_while_stmt(self, while_stmt):
         while_stmt.bool_expr.accept(self)
@@ -237,7 +250,11 @@ class TypeChecker(ast.Visitor):
             struct_types = self.sym_table.get_info(self.sym_table.get_info(type_token.lexeme))
             for i in range(1, len(id_rvalue.path)):
                 cur_token = id_rvalue.path[i].lexeme
-                type_token = struct_types[cur_token]
+                if cur_token in struct_types:
+                    type_token = struct_types[cur_token]
+                else:
+                    msg = 'Undefined variable "%s" in struct "%s"' %(cur_token,self.sym_table.get_info(id_rvalue.path[0].lexeme))
+                    self.__error(msg, id_rvalue.path[0])
                 non_structs = [token.STRINGTYPE, token.BOOLTYPE, token.FLOATTYPE, token.INTTYPE]
                 if(type_token not in non_structs):
                     struct_types = self.sym_table.get_info(type_token)
@@ -291,14 +308,16 @@ class TypeChecker(ast.Visitor):
             if(bool_expr.second_expr != None):
                 types_same = first_type == second_type
                 one_is_nil = first_type == token.NIL or second_type == token.NIL
-                if(not types_same and not one_is_nil):
+                non_structs = [token.STRINGTYPE, token.BOOLTYPE, token.FLOATTYPE, token.INTTYPE]
+                one_is_struct = first_type not in non_structs or second_type not in non_structs
+                if(not types_same and not one_is_nil and not one_is_struct):
                     msg = "Type mismatch in boolean expression, %s and %s" % (first_type, second_type)
                     self.__error(msg, bool_expr.bool_rel)
                 bool_eqls_rels = [token.EQUAL, token.NOT_EQUAL]
-                if (bool_expr.bool_rel not in bool_eqls_rels and first_type == token.NIL):
+                if (bool_expr.bool_rel.tokentype not in bool_eqls_rels and one_is_nil):
                     msg = "Invalid boolean operation with nil"
                     self.__error(msg, bool_expr.bool_rel)
-                if (bool_expr.bool_rel not in bool_eqls_rels and first_type == token.STRUCTTYPE):
+                if (bool_expr.bool_rel.tokentype not in bool_eqls_rels and one_is_struct):
                     msg =  "Invalid boolean operation with structs"
                     self.__error(msg, bool_expr.bool_rel)
                 first_type = token.BOOLTYPE

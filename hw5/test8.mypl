@@ -1,0 +1,3 @@
+#This test makes sure functions only accept the correct types of arguments
+fun nil test(x:int, y:int)end
+test(20, 20.0);

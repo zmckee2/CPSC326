@@ -1,0 +1,12 @@
+#This test makes sure a function has a return if it declares a type
+#and that nil/empty/0 returns do not cause errors
+return 0;
+return nil;
+return;
+fun float dumb()
+    return 20.0;
+end
+
+fun float dumber()
+    print("hi");
+end

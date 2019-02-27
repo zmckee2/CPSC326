@@ -1,0 +1,26 @@
+﻿PS D:\CPSC326\hw5> python hw5.py hw5_tp1.mypl
+
+PS D:\CPSC326\hw5> python hw5.py hw5_tp2.mypl
+
+PS D:\CPSC326\hw5> python hw5.py hw5_tp3.mypl
+
+PS D:\CPSC326\hw5> python hw5.py hw5_tp4.mypl
+
+PS D:\CPSC326\hw5> python hw5.py test1.mypl
+
+PS D:\CPSC326\hw5> python hw5.py test2.mypl
+error: Undefined variable "m" in struct "test" at line 8 column 5
+PS D:\CPSC326\hw5> python hw5.py test3.mypl
+error: Missing return statement in function "dumber" at line 12 column 11
+PS D:\CPSC326\hw5> python hw5.py test4.mypl
+error: Incorrect return type at line 3 column 5
+PS D:\CPSC326\hw5> python hw5.py test5.mypl
+error: Invalid boolean operation with nil at line 3 column 8
+PS D:\CPSC326\hw5> python hw5.py test6.mypl
+error: Invalid boolean operation with structs at line 5 column 6
+PS D:\CPSC326\hw5> python hw5.py test7.mypl
+error: Too few arguments in function call "test" at line 3 column 1
+PS D:\CPSC326\hw5> python hw5.py test8.mypl
+error: Type mismatch in function call "test", expecting "INTTYPE", received "FLOATTYPE" at lin
+e 3 column 1
+

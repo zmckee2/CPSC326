@@ -1,0 +1,4 @@
+#This test makes sure functions only accept the correct return type
+fun int ret()
+    return 20.0;
+end

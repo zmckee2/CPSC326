@@ -1,0 +1,4 @@
+#This test makes sure you cannot do invlid boolean operations on nil
+var x = 1.0;
+if nil > x then
+end

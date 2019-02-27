@@ -1,4 +1,26 @@
+#This test runs the type checker through a bunch of valid code and cases
+struct Str
+    var m = 2;
+    var n = 20.4;
+    var d = 3;
+    var ptr: Str = nil;
+end
+
+fun int addTwoNums(x:int, y:int)
+    return x + y;
+end
+
 var x: int = 2;
 var x: float = nil;
 set x = 2.0;
-set x = 1.0 + 3;
+var newStr = new Str;
+set newStr.ptr = new Str;
+set newStr.m = newStr.ptr.d;
+var l = addTwoNums(1,1);
+set l = addTwoNums(newStr.m, newStr.d);
+var x = true;
+if x or false then
+    set x = false;
+else
+    set x = true;
+end

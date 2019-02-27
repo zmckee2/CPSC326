@@ -1,0 +1,5 @@
+#This test makes sure you cannot do invalid boolean operations on structs
+struct test
+end
+var m = new test;
+if m > 20 then end

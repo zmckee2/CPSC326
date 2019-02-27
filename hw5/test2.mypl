@@ -1,0 +1,8 @@
+#This test makes sure structs do not allow access to undeclared variables
+struct test
+    var y = 20;
+end
+
+var str = new test;
+set str.y = 30;
+set str.m = 20;
