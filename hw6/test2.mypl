@@ -1,0 +1,37 @@
+var x = 20;
+var y = 10;
+var tru = true;
+var fls = false;
+if x > y then
+    print("x > y\n");
+else
+    print("x < y\n");
+end
+
+if fls then
+    print("How??\n");
+else
+    print("fls is false\n");
+end
+
+if false and true then
+    print("Nope\n");
+elif true and tru then
+    print("tru is true\n");
+end
+
+if true then
+    print("true is true, woah!\n");
+end
+
+if not false then
+    print("false is false, wowie!\n");
+end
+
+if not x > 300 then
+    print("x not > 300\n");
+end
+
+if not(20 > 30) and (50 == 50 or false) then
+    print("evaluated correctly\n");
+end

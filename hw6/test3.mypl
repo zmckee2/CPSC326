@@ -1,0 +1,3 @@
+var x: int = nil;
+var y: int = nil;
+var z = x + y;

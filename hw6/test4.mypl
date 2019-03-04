@@ -1,0 +1,2 @@
+var x: int = nil;
+var z = x + 20.0;

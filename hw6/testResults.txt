@@ -1,0 +1,86 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20190303171210
+Username: ZACHYSLAPTOP\Zachy
+RunAs User: ZACHYSLAPTOP\Zachy
+Configuration Name: 
+Machine: ZACHYSLAPTOP (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10756
+PSVersion: 5.1.17134.590
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.590
+BuildVersion: 10.0.17134.590
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is testResults.txt
+PS D:\CPSC326\hw6> python hw6.py hw6_t1.mypl
+Hello World!
+PS D:\CPSC326\hw6> python hw6.py hw6_t2.mypl
+Should print 5: 5
+Should print 3.14: 3.14
+Should print 5: 5
+Should print 3.14: 3.14
+Should print 5.0: 5.0
+Should print 3: 3
+Should print a: a
+Should print b: b
+Should print c: c
+PS D:\CPSC326\hw6> python hw6.py hw6_t3.mypl
+x is: 0
+y is: ab
+z is: 3.14
+3 + 4 is: 7
+3 - 4 is: -1
+5 / 2 is: 2
+5 % 2 is: 1
+3.03 + 0.11159 is: 3.14159
+3.0 - 4.0 is: -1.0
+5.0 / 2.0 is: 2.5
+'ab' + 'cd' is: abcd
+Enter a string: hello
+You entered: hello
+Enter a number: 30
+You entered: 30.0
+PS D:\CPSC326\hw6> python hw6.py hw6_t4.mypl
+should be 0: 0
+second elif case
+oops!
+hi
+PS D:\CPSC326\hw6> python hw6.py test1.mypl
+y is 20.0
+x is 5 before the loop
+x is now 5 in the loop
+x is now 4 in the loop
+x is now 3 in the loop
+x is now 2 in the loop
+x is now 1 in the loop
+x is 0 after the loop
+z as a string is 23
+z as a float is 23.0
+z as an int plus one is 24
+30
+0
+2
+2.5
+30.0
+PS D:\CPSC326\hw6> python hw6.py test2.mypl
+x > y
+fls is false
+tru is true
+true is true, woah!
+false is false, wowie!
+x not > 300
+evaluated correctly
+PS D:\CPSC326\hw6> python hw6.py test3.mypl
+error: nil values in complex expression at line 3 column 11
+PS D:\CPSC326\hw6> python hw6.py test4.mypl
+error: Mismatched type in complex expression at line 2 column 11
+PS D:\CPSC326\hw6> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20190303171312
+**********************
