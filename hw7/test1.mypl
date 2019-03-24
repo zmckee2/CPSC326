@@ -1,0 +1,21 @@
+struct S
+   var x = 0;
+   var y = 1;
+   var ptr: S=nil;
+end
+
+
+
+var m = new S;
+set m.ptr = new S;
+var n = m.ptr;
+set n.ptr = new S;
+set m.x = 20;
+set n.x = 30;
+set n.ptr.x = 40;
+print(itos(m.x));
+print("\n");
+print(itos(m.ptr.x));
+print("\n");
+print(itos(n.ptr.x));
+print("\n");
