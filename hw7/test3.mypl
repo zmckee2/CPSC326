@@ -1,0 +1,10 @@
+fun nil println(printstr:string)
+    print(printstr + "\n");
+end
+print("Please enter a number: ");
+var in = readi();
+println(itos(in) + " plus one is " + itos(in + 1));
+println(itos(in) + " times 5 is " + itos(in*5));
+print("Please enter a string: ");
+var instr = reads();
+println(instr + ", what an interesting string!");
