@@ -1,0 +1,35 @@
+myMaximum [1,2,3]
+myMaximum "akz"
+myMaximum[1,6,23,11,1200,40]
+
+myReverse [1,2,3]
+myReverse [4,3,2,1]
+myReverse "zach"
+
+myLength []
+myLength "zach"
+myLength [1,2,3,4,5,6,7]
+
+myElement 'z' "zach"
+myElement 1 []
+myElement 40 [10,20,30]
+
+myReplace (1,2) [1,2,3,2,1]
+myReplace (200,3) [1..5]
+myReplace (0,1) []
+
+myReplaceAll [(1,2) , (2,20)] [1,2,3,4,5,4,3,2,1]
+myReplaceAll [] [1..5]
+myReplaceAll [(1,2), (2,3)] [3..7]
+
+myElementSum 1 []
+myElementSum 2 [2,2,2,2,2]
+myElementSum 3 [1..6]
+
+removeDuplicates [1..5]
+removeDuplicates "aaaaa"
+removeDuplicates [1,1,2,2,3,3,4,4]
+
+mergeSort [(1,2), (2,3), (3,4)]
+mergeSort [(3,4), (2,3), (1,2)]
+mergeSort [('b',"hi"), ('d', "wowie"), ('a', "coolio"), ('c', "last")]
