@@ -1,9 +1,9 @@
 import java.util.ArrayList;
+@FunctionalInterface
+interface MapOp<T> {
+    T apply(T ap);
+}
 public class hw10{
-    @FunctionalInterface
-    interface MapOp<T> {
-        T apply(T ap);
-    }
     public static void main(String[] args)
     {
         //Implementation using a lambda function

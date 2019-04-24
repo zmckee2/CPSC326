@@ -1,0 +1,51 @@
+let list1 = Node 1 (Node 2 (Node 3 Nil))
+let list2 = Node 'a' (Node 'c' (Node 'b' (Node 'f' Nil)))
+let list3 = Node 5 (Node 2 (Node 2 (Node 3 (Node 1 Nil))))
+let list4 = Node True (Node True (Node False (Node True Nil)))
+
+insert 3 list1
+insert 'z' list2
+insert 20 list3
+insert False list4
+
+delete 2 list1
+delete 'c' list2
+delete 2 list3
+delete True list4
+
+memberOf 1 list1
+memberOf 'd' list2
+memberOf 4 list3
+memberOf True list4
+
+elementAt 0 list1
+elementAt 2 list2
+elementAt 3 list3
+elementAt 0 list4
+
+insertAt 0 1 list1
+insertAt 2 'z' list2
+insertAt 1 20 list3
+insertAt 2 False list4
+
+deleteAt 0 list1
+deleteAt 1 list2
+deleteAt 3 list3
+deleteAt 2 list4
+
+concatenate list1 list3
+concatenate list2 (Node 'b' (Node 'e' Nil))
+concatenate list4 (Node False (Node False Nil))
+
+sortList list1
+sortList list2
+sortList list3
+sortList list4
+
+mapList (\x -> x + 1) list1
+mapList (\x -> x == 'a') list2
+mapList (\x -> x * 2) list3
+mapList (\x -> x == False) list4
+
+zipWithList (\x y -> x + y) list1 list3
+zipWithList (\x y -> if x then y else 'g') list4 list2
